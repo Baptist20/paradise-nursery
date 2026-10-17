@@ -1,0 +1,105 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #f6faf6;
+}
+
+/* ---------- Landing page (background image) ---------- */
+.landing-page {
+  min-height: 100vh;
+  background-color: #2d5a3d; /* fallback if the image fails to load */
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.company-name { font-size: 3.5rem; margin: 0; letter-spacing: 2px; }
+.tagline { font-size: 1.3rem; margin: 8px 0 24px; font-style: italic; }
+
+.get-started-button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.get-started-button:hover { background: #3d9140; transform: scale(1.05); }
+
+.about-us {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 20px 28px;
+}
+.about-us h2 { margin-top: 0; }
+.about-us p { line-height: 1.7; margin-bottom: 0; }
+
+/* ---------- Navbar (shared by product + cart pages) ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2d5a3d;
+  color: #fff;
+  padding: 14px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar-brand { font-size: 1.5rem; font-weight: 700; }
+.navbar-links { display: flex; align-items: center; gap: 28px; }
+.nav-link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover, .nav-link.active { border-bottom-color: #a5e6a8; }
+
+.cart-link { display: flex; align-items: center; gap: 6px; }
+.cart-icon-wrapper { position: relative; display: inline-flex; }
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #ff5252;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+@media (max-width: 600px) {
+  .company-name { font-size: 2.4rem; }
+  .navbar { flex-direction: column; gap: 10px; }
+  .navbar-links { gap: 16px; }
+}
